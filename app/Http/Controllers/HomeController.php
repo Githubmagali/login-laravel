@@ -11,10 +11,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct() //todo lo que este debajo va a sr exclusivo para los usuarios
-    {
-        $this->middleware('auth');
-    }
+ //public function __construct() //todo lo que este debajo va a sr exclusivo para los usuarios
+    //{
+       // $this->middleware('auth');
+   // }
 
     /**
      * Show the application dashboard.
@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home'); //vamos a tener acceso a esta vista solo si estamos autenticados mediante el __construct
+        //si el usuario esta autenticado podemos 
+        //Auh::user()->id; id o cualquier propiedad como password, email etc
+       
+        return view('home.index'); //vamos a tener acceso a esta vista solo si estamos autenticados mediante el __construct
     }
 }
